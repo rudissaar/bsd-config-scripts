@@ -14,6 +14,7 @@ NAMESERVER_2='8.8.4.4'
 CRL_VERIFY=0
 EDIT_VARS=0
 
+# You need root permissions to run this script.
 if [ "$(id -u)" != '0' ]; then
     echo '> You need to become root to run this script.'
     exit 1
@@ -146,3 +147,7 @@ fi
 if [ "${LZO_COMPRESSION}" = '1' ]; then
     sed -i '/;comp-lzo/s/^;//g' "${OPENVPN_SERVER_DIR}/server.conf"
 fi
+
+# TODO:
+# Enable NAT and routing by using either NPF or PF.
+
