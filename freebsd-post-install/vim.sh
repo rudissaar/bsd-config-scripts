@@ -14,7 +14,6 @@ grep -Fq 'alias vi' /etc/csh.cshrc
 if [ "${?}" != '0' ]; then
     echo >> /etc/csh.cshrc
     echo "alias vi vim" >> /etc/csh.cshrc
-    alias vi vim
 fi
 
 if [ ! -f /etc/skel/.vimrc ]; then
