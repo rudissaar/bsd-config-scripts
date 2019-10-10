@@ -16,6 +16,10 @@ if [ "${?}" != '0' ]; then
     echo "alias vi vim" >> /etc/csh.cshrc
 fi
 
+if [ ! -f /etc/skel ]; then
+    mkdir -p /etc/skel
+fi
+
 if [ ! -f /etc/skel/.vimrc ]; then
     touch /etc/skel/.vimrc
 fi
